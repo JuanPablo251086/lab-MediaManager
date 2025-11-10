@@ -36,11 +36,11 @@ public abstract class Content implements Comparable {
 
     public abstract String contenido() {}
 
-    public abstract String eliminar() {}
+    public abstract void eliminar() {}
 
-    public abstract String publicar() {}
+    public abstract void publicar() {}
 
-    public abstract String visualizar() {}
+    public abstract void visualizar() {}
 
     @Override
     public int compareTo(Content other) { return this.id - content.id;; }
