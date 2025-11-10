@@ -1,13 +1,21 @@
 public class Vista {
 
+    private final String[] menuOptions = {
+        "===== MEDIA MANAGER =====",
+        "1. Ver contenido",
+        "2. Agregar contenido",
+        "3. Eliminar contenido",
+        "4. Buscar contenido",
+        "5. Generar reporte",
+        "6. Salir",
+        "========================="
+    };
+    
     public void printMenu() {
-        System.out.println("===== MEDIA MANAGER =====");
-        System.out.println("1. Ver contenido");
-        System.out.println("2. Agregar contenido");
-        System.out.println("3. Eliminar contenido");
-        System.out.println("4. Buscar contenido");
-        System.out.println("5. Generar reporte");
-        System.out.println("6. Salir");
-        System.out.println("=========================");
+        // El menú está disponible en menuOptions
+    }
+    
+    public String[] getMenuOptions() {
+        return menuOptions;
     }
 }
