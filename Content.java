@@ -4,18 +4,22 @@ public abstract class Content implements Comparable {
     protected ArrayList<Etiqueta> etiqueta;
     protected int age;
     protected String genere;
+    protected int id;
 
     public Content() {
         this.etiqueta = new ArrayList<>();
     }
 
     //Getters y Setters
-    public ArrayList<String> getEtiqueta() {
+    public ArrayList<Etiqueta> getEtiqueta() {
         return etiqueta;
     }
-    
-    public void setEtiqueta(ArrayList<String> etiqueta) {
-        this.etiqueta = etiqueta;
+
+    public void setEtiqueta(ArrayList<Etiqueta> etiquetas) {
+        if (etiquetas == null) return;
+        for (Etiqueta e : etiquetas) {
+            if (e != null) this.etiqueta.add(e);
+        }
     }
     
     public int getId() {
@@ -34,14 +38,14 @@ public abstract class Content implements Comparable {
         this.genere = genere;
     }
 
-    public abstract String contenido() {}
+    public abstract String contenido();
 
-    public abstract void eliminar() {}
+    public abstract void eliminar();
 
-    public abstract void publicar() {}
+    public abstract void publicar();
 
-    public abstract void visualizar() {}
+    public abstract void visualizar();
 
     @Override
-    public int compareTo(Content other) { return this.id - content.id;; }
+    public int compareTo(Content other) { return this.id - other.id; }
 }

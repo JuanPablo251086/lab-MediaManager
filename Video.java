@@ -1,15 +1,19 @@
 public class Video extends Content implements IAudio, IPlayable, IDisplayable {
     private String calidad;
-    private double duracion;
+    private int duracion;
     private boolean reproduciendo;
     private boolean publicado;
     private int tiempoActual;
+    private double velocidad;
+    private double volumen;
     
     public Video() {
         super();
         this.reproduciendo = false;
         this.publicado = false;
         this.tiempoActual = 0;
+        this.velocidad = 1;
+        this.volumen = 100;
     }
     
     @Override
@@ -63,11 +67,11 @@ public class Video extends Content implements IAudio, IPlayable, IDisplayable {
         this.calidad = calidad;
     }
     
-    public double getDuracion() {
+    public int getDuracion() {
         return duracion;
     }
     
-    public void setDuracion(double duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
     
@@ -78,7 +82,7 @@ public class Video extends Content implements IAudio, IPlayable, IDisplayable {
     public boolean isPublicado() {
         return publicado;
     }
-    
+
     public int getTiempoActual() {
         return tiempoActual;
     }
@@ -86,4 +90,33 @@ public class Video extends Content implements IAudio, IPlayable, IDisplayable {
     public void setTiempoActual(int tiempoActual) {
         this.tiempoActual = tiempoActual;
     }
+    @Override
+    public void cambiarVelocidad()
+    {
+        if (this.velocidad == 1)
+        {
+            this.velocidad = 0.5;
+        } else {
+            this.velocidad = 1;
+        }
+    }
+        @Override
+    public void modificarVolumen()
+    {
+        if (this.volumen == 100)
+        {
+            this.volumen = 0;
+        } else {
+            this.volumen = 1;
+        }
+    }
+    public int getLargo()
+    {
+        return this.duracion;
+    }
+    public void mostrar()
+    {
+        this.play();
+    }
+
 }

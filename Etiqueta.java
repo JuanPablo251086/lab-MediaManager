@@ -11,23 +11,23 @@ public class Etiqueta {
         // Retorna información de la etiqueta a través del getter
     }
     
-    @Override
+    
     public String contenido() {
         return "Etiqueta: " + nombre;
     }
     
-    @Override
+    
     public void eliminar() {
         this.activa = false;
         this.nombre = null;
     }
     
-    @Override
+    
     public void publicar() {
         this.activa = true;
     }
     
-    @Override
+    
     public void visualizar() {
         // La visualización se hace a través del método contenido()
     }
