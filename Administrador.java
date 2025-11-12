@@ -1,5 +1,7 @@
 public class Administrador extends Usuario {
-
+    private Content contenidoActual;
+    private boolean operacionExitosa;
+    
     public Administrador() {
         super(0, "", "", 0);
         this.operacionExitosa = false;
